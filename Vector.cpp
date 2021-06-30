@@ -2,9 +2,6 @@
 #include <iostream>
 #include <algorithm>
 #include <initializer_list>
-#include <cstring>
-#include <cstdlib>
-
 
 template <typename T, size_t N>
 Vector<T, N>::Vector()
@@ -23,10 +20,8 @@ Vector<T, N>::Vector(const std::initializer_list<T> &other)
 template <typename T, size_t N>
 Vector<T, N>::Vector(const Vector &other)
 {
-	for (size_t i = 0; i < N; i++)
-	{
-		this->_M_elems[i] = other._M_elems[i];
-	}
+	std::cout << 1 << std::endl;
+	std::copy(std::begin(other), std::end(other), std::begin(this->_M_elems));
 }
 
 template <typename T, size_t N>
@@ -38,8 +33,7 @@ T &Vector<T, N>::operator[](size_t index)
 template <typename T, size_t N>
 Vector<T, N>::Vector(Vector &&other)
 {
-	std::memcpy(this->_M_elems, other._M_elems, N * sizeof(T));
-	std::memset(other._M_elems, T(0), N * sizeof(T));
+	std::cout << "&&" << std::endl;
 }
 
 template <typename T, size_t N>
@@ -153,11 +147,13 @@ Vector<T, N> Vector<T, N>::operator/(const float &other) const
 int main()
 {
 	using namespace std;
-	Vector<int, 3> a = {1, 2, 3};
-	auto b = std::move(a);
-	for(int i=0;i<3;i++)
+	const size_t K = 3;
+	Vector<int, K> a = {2, 4, 8};
+	Vector<int, K> b = a;
+	for (int i = 0; i < K; i++)
 	{
-		cout <<a[i] << ' ' << b[i] << endl;
+		cout << a[i] << " " << b[i] << endl;
 	}
+
 	return 0;
 }

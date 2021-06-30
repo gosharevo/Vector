@@ -25,8 +25,7 @@ public:
 	Vector operator-(const float& other) const;
 	Vector operator*(const float& other) const;
 	Vector operator/(const float& other) const;
-private:
-	std::array<T, N> a;
+
 	
 };
 
