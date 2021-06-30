@@ -20,7 +20,6 @@ Vector<T, N>::Vector(const std::initializer_list<T> &other)
 template <typename T, size_t N>
 Vector<T, N>::Vector(const Vector &other)
 {
-	std::cout << 1 << std::endl;
 	std::copy(std::begin(other), std::end(other), std::begin(this->_M_elems));
 }
 
