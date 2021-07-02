@@ -49,7 +49,7 @@ public:
 	Vector operator+(const Vector &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] + other._M_elems[i];
 		}
@@ -59,7 +59,7 @@ public:
 	Vector operator-(const Vector &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] - other._M_elems[i];
 		}
@@ -69,7 +69,7 @@ public:
 	Vector operator*(const Vector &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] * other._M_elems[i];
 		}
@@ -79,7 +79,7 @@ public:
 	Vector operator/(const Vector &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] / other._M_elems[i];
 		}
@@ -89,7 +89,7 @@ public:
 	Vector operator+(const T &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] + other;
 		}
@@ -99,7 +99,7 @@ public:
 	Vector operator-(const T &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] - other;
 		}
@@ -109,7 +109,7 @@ public:
 	Vector operator*(const T &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] * other;
 		}
@@ -119,7 +119,7 @@ public:
 	Vector operator/(const T &other) const
 	{
 		Vector<T, N> result;
-		for (int i = 0; i < N; i++)
+		for (size_t i = 0; i < N; i++)
 		{
 			result[i] = this->_M_elems[i] / other;
 		}
@@ -176,9 +176,3 @@ public:
 		return result;
 	}
 };
-
-int main()
-{
-
-	return 0;
-}
